@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Bot, Brain, Users, CheckCircle, ArrowRight, ChevronRight } from 'lucide-react';
+import { Bot, Brain, Users, CheckCircle, ArrowRight, ChevronRight, LogIn, UserCircle } from 'lucide-react';
 
 function Home() {
   const features = [
@@ -44,12 +44,21 @@ function Home() {
                 Streamline your recruitment workflow with our AI-powered platform. Create job posts, process resumes, and connect with candidates instantly.
               </p>
               <div className="flex flex-wrap gap-4">
-                <Link to="/dashboard" className="bg-purple-600 text-white px-6 py-3 rounded-lg hover:bg-purple-700 transition-colors flex items-center text-lg">
+                <Link to="/login" className="bg-purple-600 text-white px-6 py-3 rounded-lg hover:bg-purple-700 transition-colors flex items-center text-lg">
                   Try it Free <ArrowRight className="ml-2 w-5 h-5" />
                 </Link>
                 <button className="bg-white/10 text-white px-6 py-3 rounded-lg hover:bg-white/20 transition-colors flex items-center text-lg">
                   Watch Demo <ChevronRight className="ml-2 w-5 h-5" />
                 </button>
+              </div>
+              <div className="flex items-center gap-4 text-gray-300">
+                <Link to="/login" className="flex items-center hover:text-purple-400 transition-colors">
+                  <LogIn className="w-5 h-5 mr-1" /> Login
+                </Link>
+                <span>•</span>
+                <Link to="/user-dashboard" className="flex items-center hover:text-purple-400 transition-colors">
+                  <UserCircle className="w-5 h-5 mr-1" /> My Dashboard
+                </Link>
               </div>
             </div>
             <div className="relative">
@@ -115,9 +124,14 @@ function Home() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-4xl font-bold text-white mb-6">Ready to Transform Your Hiring Process?</h2>
           <p className="text-xl text-gray-300 mb-8">Join thousands of companies using JobFlow AI to streamline their recruitment</p>
-          <Link to="/dashboard" className="bg-purple-600 text-white px-8 py-4 rounded-lg hover:bg-purple-700 transition-colors flex items-center text-lg mx-auto inline-flex">
-            Get Started Now <ArrowRight className="ml-2 w-5 h-5" />
-          </Link>
+          <div className="flex flex-wrap justify-center gap-4">
+            <Link to="/login" className="bg-purple-600 text-white px-8 py-4 rounded-lg hover:bg-purple-700 transition-colors flex items-center text-lg">
+              Get Started Now <ArrowRight className="ml-2 w-5 h-5" />
+            </Link>
+            <Link to="/user-dashboard" className="bg-white/10 text-white px-8 py-4 rounded-lg hover:bg-white/20 transition-colors flex items-center text-lg">
+              View Dashboard <UserCircle className="ml-2 w-5 h-5" />
+            </Link>
+          </div>
         </div>
       </section>
     </>
